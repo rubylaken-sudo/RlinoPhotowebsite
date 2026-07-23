@@ -4,8 +4,8 @@
   --bg: #ffffff;
   --text: #1f1f1f;
   --text-muted: #6b6b6b;
-  --accent: #a97e2f;
-  --accent-soft: rgba(169, 126, 47, 0.1);
+  --accent: #000000;
+  --accent-soft: rgba(0, 0, 0, 0.08);
   --border: #e2e2e2;
   --error: #c0392b;
   --success: #2e7d4f;
