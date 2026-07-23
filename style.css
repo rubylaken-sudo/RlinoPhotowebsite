@@ -473,3 +473,34 @@ section:nth-of-type(even) {
   border-color: var(--accent);
   transform: translateY(-2px);
 }
+
+/* Scroll reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.services-grid > .reveal:nth-child(1) { transition-delay: 0s; }
+.services-grid > .reveal:nth-child(2) { transition-delay: 0.1s; }
+.services-grid > .reveal:nth-child(3) { transition-delay: 0.2s; }
+.services-grid > .reveal:nth-child(4) { transition-delay: 0.3s; }
+
+.gallery-grid > .reveal:nth-child(1) { transition-delay: 0s; }
+.gallery-grid > .reveal:nth-child(2) { transition-delay: 0.12s; }
+.gallery-grid > .reveal:nth-child(3) { transition-delay: 0.24s; }
+
+.booking-layout > .reveal:nth-child(2) { transition-delay: 0.15s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
