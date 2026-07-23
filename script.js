@@ -38,6 +38,7 @@ function initBookingForm(form) {
     phone: (v) => v.trim().length >= 7 || "Please enter a valid phone number.",
     "session-type": (v) => v !== "" || "Please choose a session type.",
     "session-date": (v) => v !== "" || "Please choose a preferred date.",
+    "session-time": (v) => v !== "" || "Please choose a preferred time.",
   };
 
   form.querySelectorAll("input, select, textarea").forEach((field) => {

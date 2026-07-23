@@ -142,9 +142,21 @@
           <span class="field-error">Please choose a preferred date.</span>
         </div>
         <div class="field">
-          <label for="location">Location (optional)</label>
-          <input type="text" id="location" name="Location" placeholder="City or venue" />
+          <label for="session-time">Preferred Time</label>
+          <select id="session-time" name="Preferred Time" required>
+            <option value="">Select one...</option>
+            <option value="Morning (8am - 11am)">Morning (8am - 11am)</option>
+            <option value="Midday (11am - 2pm)">Midday (11am - 2pm)</option>
+            <option value="Afternoon (2pm - 5pm)">Afternoon (2pm - 5pm)</option>
+            <option value="Evening (5pm - 8pm)">Evening (5pm - 8pm)</option>
+          </select>
+          <span class="field-error">Please choose a preferred time.</span>
         </div>
+      </div>
+
+      <div class="field">
+        <label for="location">Location (optional)</label>
+        <input type="text" id="location" name="Location" placeholder="City or venue" />
       </div>
 
       <div class="field">
