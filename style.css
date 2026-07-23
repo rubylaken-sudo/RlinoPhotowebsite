@@ -140,13 +140,11 @@ img {
   min-height: 78vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(
-    180deg,
-    var(--bg-mid) 0%,
-    var(--bg-soft) 35%,
-    var(--bg-alt) 65%,
-    var(--bg) 100%
-  );
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.78)),
+    url("assets/hero.jpg");
+  background-size: cover;
+  background-position: center;
   text-align: center;
 }
 
