@@ -23,7 +23,7 @@ directly to you.
 
 The form uses [FormSubmit](https://formsubmit.co) — a free service that
 emails you form submissions with zero backend setup. It's already configured
-to send to **rubylaken@gmail.com**.
+to send to **rlinophoto@gmail.com**.
 
 The **first** time the form is submitted, FormSubmit sends a confirmation
 email to that address — click the "Confirm" link in it once, and every
@@ -31,11 +31,11 @@ submission after that (from anyone) lands straight in your inbox. Until you
 confirm, submissions won't be delivered.
 
 To test it: open `booking.html` (or `index.html`) in a browser, fill out the
-form, and submit it. Then check rubylaken@gmail.com (including spam) for the
+form, and submit it. Then check rlinophoto@gmail.com (including spam) for the
 FormSubmit confirmation email.
 
 If you'd rather send to a different address, replace
-`rubylaken@gmail.com` in the form `action` URL in both `index.html` and
+`rlinophoto@gmail.com` in the form `action` URL in both `index.html` and
 `booking.html`.
 
 ## 2. Embedding in Squarespace
