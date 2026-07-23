@@ -1,8 +1,10 @@
 /* Rlino Photo — site styles */
 
 :root {
-  --bg: #0a0a0a;
-  --bg-alt: #161616;
+  --bg: #000000;
+  --bg-alt: #171717;
+  --bg-soft: #2b2b2b;
+  --bg-mid: #545454;
   --text: #ffffff;
   --text-muted: #a8a8a8;
   --accent: #ffffff;
@@ -138,9 +140,13 @@ img {
   min-height: 78vh;
   display: flex;
   align-items: center;
-  background:
-    linear-gradient(180deg, rgba(14, 14, 14, 0.55), rgba(14, 14, 14, 0.85)),
-    radial-gradient(circle at 30% 20%, #262626, #0a0a0a 70%);
+  background: linear-gradient(
+    180deg,
+    var(--bg-mid) 0%,
+    var(--bg-soft) 35%,
+    var(--bg-alt) 65%,
+    var(--bg) 100%
+  );
   text-align: center;
 }
 
@@ -253,7 +259,7 @@ section:nth-of-type(even) {
 
 .gallery-grid .frame {
   aspect-ratio: 4 / 5;
-  background: linear-gradient(135deg, #2a2a2a, #171717);
+  background: linear-gradient(135deg, var(--bg-mid), var(--bg-soft), var(--bg-alt));
   border-radius: var(--radius);
   display: flex;
   align-items: center;
