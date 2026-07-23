@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Book a Session — Rlino Photo</title>
+<link rel="stylesheet" href="booking-embed.css" />
+</head>
+<body>
+
+<h2>Book Your Session</h2>
+<p class="intro">Fill out the form and I'll get back to you within 1-2 business days to confirm your date.</p>
+
+<form
+  id="booking-form"
+  class="booking-form"
+  action="https://formsubmit.co/ajax/rubylaken@gmail.com"
+  method="POST"
+  novalidate
+>
+  <input type="hidden" name="_subject" value="New booking request — Rlino Photo" />
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_template" value="table" />
+  <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" />
+
+  <div class="form-row">
+    <div class="field">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="Name" required />
+      <span class="field-error">Please enter your full name.</span>
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="Email" required />
+      <span class="field-error">Please enter a valid email address.</span>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="field">
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="Phone" required />
+      <span class="field-error">Please enter a valid phone number.</span>
+    </div>
+    <div class="field">
+      <label for="session-type">Session Type</label>
+      <select id="session-type" name="Session Type" required>
+        <option value="">Select one...</option>
+        <option value="Portrait">Portrait</option>
+        <option value="Wedding">Wedding</option>
+        <option value="Event">Event</option>
+        <option value="Product / Brand">Product / Brand</option>
+        <option value="Other">Other</option>
+      </select>
+      <span class="field-error">Please choose a session type.</span>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="field">
+      <label for="session-date">Preferred Date</label>
+      <input type="date" id="session-date" name="Preferred Date" required />
+      <span class="field-error">Please choose a preferred date.</span>
+    </div>
+    <div class="field">
+      <label for="location">Location (optional)</label>
+      <input type="text" id="location" name="Location" placeholder="City or venue" />
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="message">Tell me about your session</label>
+    <textarea id="message" name="Message" placeholder="Number of people, vision for the shoot, anything I should know..."></textarea>
+  </div>
+
+  <button type="submit" class="btn">Request Booking</button>
+  <p class="form-note">This sends a booking request — it doesn't guarantee the date until confirmed by email.</p>
+  <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+</form>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+/* Rlino Photo — standalone booking form styles (light theme, for iframe embedding) */
+
+:root {
+  --bg: #ffffff;
+  --text: #1f1f1f;
+  --text-muted: #6b6b6b;
+  --accent: #a97e2f;
+  --accent-soft: rgba(169, 126, 47, 0.1);
+  --border: #e2e2e2;
+  --error: #c0392b;
+  --success: #2e7d4f;
+  --radius: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  margin: 0 0 6px;
+}
+
+.intro {
+  color: var(--text-muted);
+  margin: 0 0 24px;
+  font-size: 0.95rem;
+}
+
+.booking-form {
+  max-width: 640px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 480px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.field.error input,
+.field.error select,
+.field.error textarea {
+  border-color: var(--error);
+}
+
+.field-error {
+  color: var(--error);
+  font-size: 0.8rem;
+  margin-top: 4px;
+  display: none;
+}
+
+.field.error .field-error {
+  display: block;
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 14px;
+}
+
+.form-status {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  display: none;
+}
+
+.form-status.visible {
+  display: block;
+}
+
+.form-status.success {
+  background: rgba(46, 125, 79, 0.1);
+  color: var(--success);
+  border: 1px solid rgba(46, 125, 79, 0.3);
+}
+
+.form-status.error {
+  background: rgba(192, 57, 43, 0.1);
+  color: var(--error);
+  border: 1px solid rgba(192, 57, 43, 0.3);
+}

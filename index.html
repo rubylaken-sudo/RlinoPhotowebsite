@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rlino Photo — Photography Booking</title>
+<meta name="description" content="Rlino Photo — book your photography session online. Portraits, events, and weddings." />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="#" class="logo">Rlino <span>Photo</span></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#booking">Book a Session</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Rlino Photo</span>
+    <h1>Photography that feels like you.</h1>
+    <p>Portraits, events, and weddings captured with care. Check your date and request a booking in under a minute.</p>
+    <a href="#booking" class="btn btn-primary">Book a Session</a>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">What I Offer</span>
+      <h2>Services</h2>
+      <p>Every session is tailored to you — from an intimate portrait shoot to a full day of wedding coverage.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Portraits</h3>
+        <p>Individual, couple, and family sessions on location or in studio.</p>
+      </div>
+      <div class="service-card">
+        <h3>Weddings</h3>
+        <p>Full-day or elopement coverage, from getting ready to the last dance.</p>
+      </div>
+      <div class="service-card">
+        <h3>Events</h3>
+        <p>Corporate, birthdays, and celebrations, documented candidly.</p>
+      </div>
+      <div class="service-card">
+        <h3>Product &amp; Brand</h3>
+        <p>Clean, editorial imagery for shops and small businesses.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Recent Work</span>
+      <h2>Gallery</h2>
+      <p>Add your favorite images here — swap each frame below for an &lt;img&gt; tag pointing at your photos.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="frame">Photo 1</div>
+      <div class="frame">Photo 2</div>
+      <div class="frame">Photo 3</div>
+      <div class="frame">Photo 4</div>
+      <div class="frame">Photo 5</div>
+      <div class="frame">Photo 6</div>
+    </div>
+  </div>
+</section>
+
+<section id="booking">
+  <div class="container booking-layout">
+    <div class="booking-info">
+      <span class="eyebrow">Availability</span>
+      <h2>Book Your Session</h2>
+      <p>Fill out the form and I'll get back to you within 1-2 business days to confirm your date and go over details.</p>
+      <ul>
+        <li><strong>Response Time</strong>Within 1-2 business days</li>
+        <li><strong>Deposit</strong>A deposit secures your date once confirmed</li>
+        <li><strong>Flexible Locations</strong>Studio, outdoors, or your venue</li>
+      </ul>
+    </div>
+
+    <form
+      id="booking-form"
+      class="booking-form"
+      action="https://formsubmit.co/ajax/rubylaken@gmail.com"
+      method="POST"
+      novalidate
+    >
+      <!-- FormSubmit configuration -->
+      <input type="hidden" name="_subject" value="New booking request — Rlino Photo" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" />
+
+      <div class="form-row">
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="Name" required />
+          <span class="field-error">Please enter your full name.</span>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="Email" required />
+          <span class="field-error">Please enter a valid email address.</span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="Phone" required />
+          <span class="field-error">Please enter a valid phone number.</span>
+        </div>
+        <div class="field">
+          <label for="session-type">Session Type</label>
+          <select id="session-type" name="Session Type" required>
+            <option value="">Select one...</option>
+            <option value="Portrait">Portrait</option>
+            <option value="Wedding">Wedding</option>
+            <option value="Event">Event</option>
+            <option value="Product / Brand">Product / Brand</option>
+            <option value="Other">Other</option>
+          </select>
+          <span class="field-error">Please choose a session type.</span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="session-date">Preferred Date</label>
+          <input type="date" id="session-date" name="Preferred Date" required />
+          <span class="field-error">Please choose a preferred date.</span>
+        </div>
+        <div class="field">
+          <label for="location">Location (optional)</label>
+          <input type="text" id="location" name="Location" placeholder="City or venue" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="message">Tell me about your session</label>
+        <textarea id="message" name="Message" placeholder="Number of people, vision for the shoot, anything I should know..."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Request Booking</button>
+      <p class="form-note">This sends a booking request — it doesn't guarantee the date until confirmed by email.</p>
+      <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer" id="contact">
+  <div class="container">
+    <p>Rlino Photo &middot; <a href="mailto:rubylaken@gmail.com">rubylaken@gmail.com</a></p>
+    <p>&copy; <span id="year"></span> Rlino Photo. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
