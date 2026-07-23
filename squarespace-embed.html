@@ -1,0 +1,326 @@
+<!--
+  Rlino Photo — Booking Form (Squarespace Code Block embed)
+
+  HOW TO USE:
+  1. In the Squarespace editor, go to the page where you want the booking
+     form (e.g. a "Book Now" page), click an insert point, and add a
+     "Code" block (under "More" in the block menu).
+  2. Paste this ENTIRE file into that Code Block.
+  3. Save and view the page — the form should appear styled and working.
+  4. First submission: FormSubmit emails rubylaken@gmail.com a one-time
+     confirmation link. Click it once, then all future submissions land
+     in that inbox automatically. See README.md for details.
+
+  Everything below is scoped under #rlino-booking-embed so it won't
+  collide with your Squarespace theme's styles.
+-->
+<div id="rlino-booking-embed">
+  <style>
+    #rlino-booking-embed {
+      --rb-text: #1f1f1f;
+      --rb-muted: #6b6b6b;
+      --rb-accent: #a97e2f;
+      --rb-border: #e2e2e2;
+      --rb-error: #c0392b;
+      --rb-success: #2e7d4f;
+      --rb-radius: 6px;
+      max-width: 640px;
+      margin: 0 auto;
+      font-family: inherit;
+      color: var(--rb-text);
+      box-sizing: border-box;
+    }
+    #rlino-booking-embed *,
+    #rlino-booking-embed *::before,
+    #rlino-booking-embed *::after {
+      box-sizing: border-box;
+    }
+    #rlino-booking-embed h2.rb-title {
+      font-weight: 600;
+      margin: 0 0 6px;
+    }
+    #rlino-booking-embed .rb-intro {
+      color: var(--rb-muted);
+      margin: 0 0 24px;
+      font-size: 0.95rem;
+    }
+    #rlino-booking-embed .rb-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 480px) {
+      #rlino-booking-embed .rb-row {
+        grid-template-columns: 1fr;
+      }
+    }
+    #rlino-booking-embed .rb-field {
+      margin-bottom: 18px;
+    }
+    #rlino-booking-embed .rb-field label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--rb-muted);
+      margin-bottom: 6px;
+    }
+    #rlino-booking-embed .rb-field input,
+    #rlino-booking-embed .rb-field select,
+    #rlino-booking-embed .rb-field textarea {
+      width: 100%;
+      padding: 12px 14px;
+      background: #fff;
+      border: 1px solid var(--rb-border);
+      border-radius: var(--rb-radius);
+      color: var(--rb-text);
+      font-size: 0.95rem;
+      font-family: inherit;
+      line-height: 1.4;
+    }
+    #rlino-booking-embed .rb-field input:focus,
+    #rlino-booking-embed .rb-field select:focus,
+    #rlino-booking-embed .rb-field textarea:focus {
+      outline: none;
+      border-color: var(--rb-accent);
+    }
+    #rlino-booking-embed .rb-field textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    #rlino-booking-embed .rb-field.rb-error input,
+    #rlino-booking-embed .rb-field.rb-error select,
+    #rlino-booking-embed .rb-field.rb-error textarea {
+      border-color: var(--rb-error);
+    }
+    #rlino-booking-embed .rb-field-error {
+      color: var(--rb-error);
+      font-size: 0.8rem;
+      margin-top: 4px;
+      display: none;
+    }
+    #rlino-booking-embed .rb-field.rb-error .rb-field-error {
+      display: block;
+    }
+    #rlino-booking-embed .rb-honeypot {
+      position: absolute;
+      left: -9999px;
+      opacity: 0;
+      pointer-events: none;
+    }
+    #rlino-booking-embed .rb-btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: var(--rb-radius);
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: 1px solid var(--rb-accent);
+      background: var(--rb-accent);
+      color: #fff;
+    }
+    #rlino-booking-embed .rb-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    #rlino-booking-embed .rb-note {
+      font-size: 0.8rem;
+      color: var(--rb-muted);
+      margin-top: 14px;
+    }
+    #rlino-booking-embed .rb-status {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      padding: 12px 14px;
+      border-radius: var(--rb-radius);
+      display: none;
+    }
+    #rlino-booking-embed .rb-status.rb-visible {
+      display: block;
+    }
+    #rlino-booking-embed .rb-status.rb-success {
+      background: rgba(46, 125, 79, 0.1);
+      color: var(--rb-success);
+      border: 1px solid rgba(46, 125, 79, 0.3);
+    }
+    #rlino-booking-embed .rb-status.rb-error-msg {
+      background: rgba(192, 57, 43, 0.1);
+      color: var(--rb-error);
+      border: 1px solid rgba(192, 57, 43, 0.3);
+    }
+  </style>
+
+  <h2 class="rb-title">Book Your Session</h2>
+  <p class="rb-intro">Fill out the form and I'll get back to you within 1-2 business days to confirm your date.</p>
+
+  <form
+    id="rb-booking-form"
+    action="https://formsubmit.co/ajax/rubylaken@gmail.com"
+    method="POST"
+    novalidate
+  >
+    <input type="hidden" name="_subject" value="New booking request — Rlino Photo" />
+    <input type="hidden" name="_captcha" value="false" />
+    <input type="hidden" name="_template" value="table" />
+    <input type="text" name="_honey" class="rb-honeypot" tabindex="-1" autocomplete="off" />
+
+    <div class="rb-row">
+      <div class="rb-field" data-field="rb-name">
+        <label for="rb-name">Full Name</label>
+        <input type="text" id="rb-name" name="Name" required />
+        <span class="rb-field-error">Please enter your full name.</span>
+      </div>
+      <div class="rb-field" data-field="rb-email">
+        <label for="rb-email">Email</label>
+        <input type="email" id="rb-email" name="Email" required />
+        <span class="rb-field-error">Please enter a valid email address.</span>
+      </div>
+    </div>
+
+    <div class="rb-row">
+      <div class="rb-field" data-field="rb-phone">
+        <label for="rb-phone">Phone</label>
+        <input type="tel" id="rb-phone" name="Phone" required />
+        <span class="rb-field-error">Please enter a valid phone number.</span>
+      </div>
+      <div class="rb-field" data-field="rb-session-type">
+        <label for="rb-session-type">Session Type</label>
+        <select id="rb-session-type" name="Session Type" required>
+          <option value="">Select one...</option>
+          <option value="Portrait">Portrait</option>
+          <option value="Wedding">Wedding</option>
+          <option value="Event">Event</option>
+          <option value="Product / Brand">Product / Brand</option>
+          <option value="Other">Other</option>
+        </select>
+        <span class="rb-field-error">Please choose a session type.</span>
+      </div>
+    </div>
+
+    <div class="rb-row">
+      <div class="rb-field" data-field="rb-session-date">
+        <label for="rb-session-date">Preferred Date</label>
+        <input type="date" id="rb-session-date" name="Preferred Date" required />
+        <span class="rb-field-error">Please choose a preferred date.</span>
+      </div>
+      <div class="rb-field" data-field="rb-location">
+        <label for="rb-location">Location (optional)</label>
+        <input type="text" id="rb-location" name="Location" placeholder="City or venue" />
+      </div>
+    </div>
+
+    <div class="rb-field" data-field="rb-message">
+      <label for="rb-message">Tell me about your session</label>
+      <textarea id="rb-message" name="Message" placeholder="Number of people, vision for the shoot, anything I should know..."></textarea>
+    </div>
+
+    <button type="submit" class="rb-btn">Request Booking</button>
+    <p class="rb-note">This sends a booking request — it doesn't guarantee the date until confirmed by email.</p>
+    <div id="rb-form-status" class="rb-status" role="status" aria-live="polite"></div>
+  </form>
+</div>
+
+<script>
+  (function () {
+    var root = document.getElementById("rlino-booking-embed");
+    if (!root || root.dataset.rbInit) return;
+    root.dataset.rbInit = "true";
+
+    var form = root.querySelector("#rb-booking-form");
+    var status = root.querySelector("#rb-form-status");
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var dateInput = root.querySelector("#rb-session-date");
+
+    if (dateInput) {
+      dateInput.setAttribute("min", new Date().toISOString().split("T")[0]);
+    }
+
+    var validators = {
+      "rb-name": function (v) {
+        return v.trim().length >= 2 || "Please enter your full name.";
+      },
+      "rb-email": function (v) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) || "Please enter a valid email address.";
+      },
+      "rb-phone": function (v) {
+        return v.trim().length >= 7 || "Please enter a valid phone number.";
+      },
+      "rb-session-type": function (v) {
+        return v !== "" || "Please choose a session type.";
+      },
+      "rb-session-date": function (v) {
+        return v !== "" || "Please choose a preferred date.";
+      },
+    };
+
+    function validateField(field) {
+      var rule = validators[field.id];
+      var wrapper = field.closest(".rb-field");
+      if (!rule) return true;
+
+      var result = rule(field.value);
+      if (result === true) {
+        wrapper.classList.remove("rb-error");
+        return true;
+      }
+      wrapper.classList.add("rb-error");
+      var errorEl = wrapper.querySelector(".rb-field-error");
+      if (errorEl) errorEl.textContent = result;
+      return false;
+    }
+
+    function showStatus(message, type) {
+      status.textContent = message;
+      status.className = "rb-status rb-visible " + type;
+      status.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+
+    form.querySelectorAll("input, select, textarea").forEach(function (field) {
+      field.addEventListener("blur", function () {
+        validateField(field);
+      });
+    });
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var valid = true;
+      Object.keys(validators).forEach(function (id) {
+        var field = root.querySelector("#" + id);
+        if (field && !validateField(field)) valid = false;
+      });
+
+      if (!valid) {
+        showStatus("Please fix the highlighted fields above.", "rb-error-msg");
+        return;
+      }
+
+      var honey = form.querySelector('input[name="_honey"]');
+      if (honey && honey.value) return;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+
+      fetch(form.action, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      })
+        .then(function (response) {
+          if (!response.ok) throw new Error("Request failed");
+          showStatus(
+            "Thank you! Your booking request has been sent. We'll reply within 1-2 business days to confirm your date.",
+            "rb-success"
+          );
+          form.reset();
+        })
+        .catch(function () {
+          showStatus(
+            "Something went wrong sending your request. Please email us directly or try again.",
+            "rb-error-msg"
+          );
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Request Booking";
+        });
+    });
+  })();
+</script>

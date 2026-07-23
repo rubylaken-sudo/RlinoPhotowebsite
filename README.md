@@ -10,9 +10,14 @@ directly to you.
   booking form, contact) you can deploy as-is.
 - `booking.html` / `booking-embed.css` — a standalone, light-themed version of
   **just the booking form**, meant to be embedded into an existing site (e.g.
-  Squarespace, Wix, WordPress) via `<iframe>`.
-- `script.js` — shared logic: mobile nav toggle, date validation (blocks past
-  dates), form validation, and AJAX submission.
+  Wix, WordPress) via `<iframe>`.
+- `squarespace-embed.html` — **use this one for Squarespace.** A single
+  self-contained snippet (HTML + scoped CSS + JS all inline) designed to be
+  pasted directly into a Squarespace Code Block — no external hosting or
+  iframe needed. See "Embedding in Squarespace" below.
+- `script.js` — shared logic for `index.html`/`booking.html`: mobile nav
+  toggle, date validation (blocks past dates), form validation, and AJAX
+  submission.
 
 ## 1. Activate email delivery (one-time, ~1 minute)
 
@@ -33,31 +38,44 @@ If you'd rather send to a different address, replace
 `rubylaken@gmail.com` in the form `action` URL in both `index.html` and
 `booking.html`.
 
-## 2. Choose how to use it
+## 2. Embedding in Squarespace
 
-**Option A — Deploy this whole site.** If rlinophoto.com should be replaced
-by this repo, deploy it with any static host: GitHub Pages, Netlify, Vercel,
-or Cloudflare Pages all work with zero config since there's no build step.
-Point your domain's DNS at whichever host you pick.
+1. Open the page (or add a new page) where you want the booking form —
+   e.g. a "Book Now" page.
+2. Click an insert point in the page content, open the block menu, and
+   choose **Code** (under "More").
+3. Open `squarespace-embed.html` from this repo, copy the **entire file**,
+   and paste it into that Code Block.
+4. Save and view the page. The form is scoped under
+   `#rlino-booking-embed` with its own prefixed class names (`rb-...`), so
+   it won't inherit or clash with your Squarespace theme's styles.
+5. Squarespace's Code Block runs the `<script>` tag automatically, so the
+   form works with no further setup — just confirm the FormSubmit email as
+   described in step 1 above.
 
-**Option B — Embed just the booking form into your existing site.** If
-rlinophoto.com is already built on a platform (Squarespace, Wix, etc.), keep
-that site and drop the form in as an embed:
+To change the accent color to match your brand, edit the `--rb-accent`
+value near the top of the `<style>` block in `squarespace-embed.html`
+before pasting.
 
-1. Host `booking.html`, `booking-embed.css`, and `script.js` somewhere public
-   (e.g. deploy this repo to Netlify/GitHub Pages — you'll get a URL like
-   `https://yoursite.netlify.app/booking.html`).
-2. On your existing site, add an "Embed" / "Code" block and paste:
-   ```html
-   <iframe
-     src="https://yoursite.netlify.app/booking.html"
-     style="width:100%; height:900px; border:0;"
-     title="Book a session with Rlino Photo"
-   ></iframe>
-   ```
-3. Adjust the `height` to taste.
+## 3. Other embed method (Wix, WordPress, etc.)
 
-## 3. Customize
+`booking.html` / `booking-embed.css` / `script.js` are an alternative to
+`squarespace-embed.html` for platforms that don't support inline Code
+Blocks — host those three files publicly (e.g. Netlify or GitHub Pages) and
+embed via `<iframe>`:
+
+```html
+<iframe
+  src="https://yoursite.netlify.app/booking.html"
+  style="width:100%; height:900px; border:0;"
+  title="Book a session with Rlino Photo"
+></iframe>
+```
+
+Not needed for Squarespace — use `squarespace-embed.html` instead (see
+above).
+
+## 4. Customize
 
 - Replace the gallery placeholder `<div class="frame">` blocks in
   `index.html` with real `<img>` tags of your work.
