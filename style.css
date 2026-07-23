@@ -1,15 +1,15 @@
 /* Rlino Photo — site styles */
 
 :root {
-  --bg: #000000;
-  --bg-alt: #171717;
-  --bg-soft: #2b2b2b;
-  --bg-mid: #545454;
+  --bg: #1c1c1c;
+  --bg-alt: #272727;
+  --bg-soft: #3c3c3c;
+  --bg-mid: #6e6e6e;
   --text: #ffffff;
-  --text-muted: #a8a8a8;
+  --text-muted: #b6b6b6;
   --accent: #ffffff;
   --accent-soft: rgba(255, 255, 255, 0.14);
-  --border: rgba(255, 255, 255, 0.15);
+  --border: rgba(255, 255, 255, 0.18);
   --error: #e0665a;
   --success: #6ec98f;
   --max-width: 1100px;
