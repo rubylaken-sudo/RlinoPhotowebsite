@@ -142,15 +142,9 @@
           <span class="field-error">Please choose a preferred date.</span>
         </div>
         <div class="field">
-          <label for="session-time">Preferred Time</label>
-          <select id="session-time" name="Preferred Time" required>
-            <option value="">Select one...</option>
-            <option value="Morning (8am - 11am)">Morning (8am - 11am)</option>
-            <option value="Midday (11am - 2pm)">Midday (11am - 2pm)</option>
-            <option value="Afternoon (2pm - 5pm)">Afternoon (2pm - 5pm)</option>
-            <option value="Evening (5pm - 8pm)">Evening (5pm - 8pm)</option>
-          </select>
-          <span class="field-error">Please choose a preferred time.</span>
+          <label for="session-time">Preferred Start Time</label>
+          <input type="time" id="session-time" name="Preferred Start Time" min="08:00" max="20:00" required />
+          <span class="field-error">Please choose a starting time between 8am and 8pm.</span>
         </div>
       </div>
 
