@@ -486,6 +486,57 @@ section:nth-of-type(even) {
   border: 1px solid rgba(224, 102, 90, 0.35);
 }
 
+/* Legal / policy pages */
+.legal-page {
+  max-width: 760px;
+}
+
+.legal-page h1 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin-bottom: 0.2em;
+}
+
+.legal-updated {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 2em;
+}
+
+.legal-notice {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 3em;
+}
+
+.legal-page h2 {
+  font-size: 1.25rem;
+  margin-top: 2.2em;
+  margin-bottom: 0.5em;
+}
+
+.legal-page p {
+  color: var(--text-muted);
+  margin-bottom: 1em;
+}
+
+.legal-page ul {
+  color: var(--text-muted);
+  margin: 0 0 1em;
+  padding-left: 1.3em;
+}
+
+.legal-page li {
+  margin-bottom: 0.5em;
+}
+
+.legal-page a {
+  color: var(--accent);
+}
+
 /* Footer */
 .site-footer {
   padding: 40px 0;
