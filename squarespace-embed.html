@@ -17,12 +17,13 @@
 <div id="rlino-booking-embed">
   <style>
     #rlino-booking-embed {
-      --rb-text: #1f1f1f;
-      --rb-muted: #6b6b6b;
-      --rb-accent: #000000;
-      --rb-border: #e2e2e2;
-      --rb-error: #c0392b;
-      --rb-success: #2e7d4f;
+      --rb-text: #2b2420;
+      --rb-muted: #6e655c;
+      --rb-accent: #ff78ac;
+      --rb-teal: #a8d5e3;
+      --rb-border: #ded6c4;
+      --rb-error: #d1453b;
+      --rb-success: #2e8b67;
       --rb-radius: 6px;
       max-width: 640px;
       margin: 0 auto;
@@ -44,6 +45,9 @@
     #rlino-booking-embed h2.rb-title {
       font-weight: 600;
       margin: 0 0 6px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid var(--rb-teal);
+      display: inline-block;
     }
     #rlino-booking-embed .rb-intro {
       color: var(--rb-muted);
@@ -120,7 +124,7 @@
       cursor: pointer;
       border: 1px solid var(--rb-accent);
       background: var(--rb-accent);
-      color: #fff;
+      color: #2b2420;
     }
     #rlino-booking-embed .rb-btn:disabled {
       opacity: 0.6;
@@ -142,14 +146,14 @@
       display: block;
     }
     #rlino-booking-embed .rb-status.rb-success {
-      background: rgba(46, 125, 79, 0.1);
+      background: rgba(46, 139, 103, 0.1);
       color: var(--rb-success);
-      border: 1px solid rgba(46, 125, 79, 0.3);
+      border: 1px solid rgba(46, 139, 103, 0.3);
     }
     #rlino-booking-embed .rb-status.rb-error-msg {
-      background: rgba(192, 57, 43, 0.1);
+      background: rgba(209, 69, 59, 0.1);
       color: var(--rb-error);
-      border: 1px solid rgba(192, 57, 43, 0.3);
+      border: 1px solid rgba(209, 69, 59, 0.3);
     }
   </style>
 

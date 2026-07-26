@@ -1,14 +1,15 @@
 /* Rlino Photo — standalone booking form styles (light theme, for iframe embedding) */
 
 :root {
-  --bg: #ffffff;
-  --text: #1f1f1f;
-  --text-muted: #6b6b6b;
-  --accent: #000000;
-  --accent-soft: rgba(0, 0, 0, 0.08);
-  --border: #e2e2e2;
-  --error: #c0392b;
-  --success: #2e7d4f;
+  --bg: #f2f0ea;
+  --text: #2b2420;
+  --text-muted: #6e655c;
+  --accent: #ff78ac;
+  --accent-soft: rgba(255, 120, 172, 0.14);
+  --teal: #a8d5e3;
+  --border: #ded6c4;
+  --error: #d1453b;
+  --success: #2e8b67;
   --radius: 6px;
 }
 
@@ -29,6 +30,9 @@ h2 {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
   margin: 0 0 6px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--teal);
+  display: inline-block;
 }
 
 .intro {
@@ -122,7 +126,7 @@ h2 {
   cursor: pointer;
   border: 1px solid var(--accent);
   background: var(--accent);
-  color: #fff;
+  color: #2b2420;
 }
 
 .btn:disabled {
@@ -149,13 +153,13 @@ h2 {
 }
 
 .form-status.success {
-  background: rgba(46, 125, 79, 0.1);
+  background: rgba(46, 139, 103, 0.1);
   color: var(--success);
-  border: 1px solid rgba(46, 125, 79, 0.3);
+  border: 1px solid rgba(46, 139, 103, 0.3);
 }
 
 .form-status.error {
-  background: rgba(192, 57, 43, 0.1);
+  background: rgba(209, 69, 59, 0.1);
   color: var(--error);
-  border: 1px solid rgba(192, 57, 43, 0.3);
+  border: 1px solid rgba(209, 69, 59, 0.3);
 }
