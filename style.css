@@ -92,13 +92,15 @@ img {
   gap: 28px;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 10px 22px;
+  background: var(--teal);
+  border-radius: 999px;
 }
 
 .nav-links a {
   text-decoration: none;
   font-size: 0.95rem;
-  color: var(--teal-dark);
+  color: #000000;
   transition: color 0.2s ease;
 }
 
@@ -126,7 +128,8 @@ img {
     left: 0;
     right: 0;
     flex-direction: column;
-    background: var(--bg-alt);
+    background: var(--teal);
+    border-radius: 0;
     padding: 16px 24px;
     gap: 16px;
     border-bottom: 1px solid var(--border);
