@@ -11,6 +11,7 @@
   --accent-soft: rgba(255, 120, 172, 0.16);
   --teal: #a8d5e3;
   --teal-soft: rgba(168, 213, 227, 0.3);
+  --teal-dark: #1f6e82;
   --border: rgba(43, 36, 32, 0.16);
   --error: #d1453b;
   --success: #2e8b67;
@@ -97,7 +98,7 @@ img {
 .nav-links a {
   text-decoration: none;
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: var(--teal-dark);
   transition: color 0.2s ease;
 }
 
