@@ -259,6 +259,7 @@ section:nth-of-type(even) {
 }
 
 .gallery-grid .frame {
+  display: block;
   aspect-ratio: 4 / 5;
   border-radius: var(--radius);
   overflow: hidden;
@@ -608,6 +609,7 @@ section:nth-of-type(even) {
 .gallery-grid > .reveal:nth-child(1) { transition-delay: 0s; }
 .gallery-grid > .reveal:nth-child(2) { transition-delay: 0.12s; }
 .gallery-grid > .reveal:nth-child(3) { transition-delay: 0.24s; }
+.gallery-grid > .reveal:nth-child(4) { transition-delay: 0.36s; }
 
 .booking-layout > .reveal:nth-child(2) { transition-delay: 0.15s; }
 
