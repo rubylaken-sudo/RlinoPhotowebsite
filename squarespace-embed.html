@@ -17,11 +17,12 @@
 <div id="rlino-booking-embed">
   <style>
     #rlino-booking-embed {
-      --rb-text: #2b2420;
-      --rb-muted: #6e655c;
-      --rb-accent: #ff78ac;
-      --rb-teal: #a8d5e3;
-      --rb-border: #ded6c4;
+      --rb-text: #1a1a1a;
+      --rb-muted: #878787;
+      --rb-accent: #05ad98;
+      --rb-teal: #05ad98;
+      --rb-teal-dark: #037868;
+      --rb-border: #bbbfbf;
       --rb-error: #d1453b;
       --rb-success: #2e8b67;
       --rb-radius: 6px;
@@ -46,7 +47,7 @@
       font-weight: 600;
       margin: 0 0 6px;
       padding-bottom: 10px;
-      border-bottom: 3px solid var(--rb-teal);
+      border-bottom: 3px solid var(--rb-teal-dark);
       display: inline-block;
     }
     #rlino-booking-embed .rb-intro {
@@ -90,7 +91,7 @@
     #rlino-booking-embed .rb-field select:focus,
     #rlino-booking-embed .rb-field textarea:focus {
       outline: none;
-      border-color: var(--rb-accent);
+      border-color: var(--rb-teal-dark);
     }
     #rlino-booking-embed .rb-field textarea {
       resize: vertical;
@@ -124,7 +125,7 @@
       cursor: pointer;
       border: 1px solid var(--rb-accent);
       background: var(--rb-accent);
-      color: #2b2420;
+      color: var(--rb-text);
     }
     #rlino-booking-embed .rb-btn:disabled {
       opacity: 0.6;
