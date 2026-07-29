@@ -239,10 +239,18 @@ section:nth-of-type(even) {
 }
 
 .service-card {
+  display: block;
   padding: 32px 24px;
   border: 1px solid var(--teal);
   border-radius: var(--radius);
   text-align: center;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.15s ease;
+}
+
+a.service-card:hover {
+  border-color: var(--teal-dark);
+  transform: translateY(-2px);
 }
 
 .service-card h3 {
@@ -610,6 +618,7 @@ section:nth-of-type(even) {
 .services-grid > .reveal:nth-child(2) { transition-delay: 0.1s; }
 .services-grid > .reveal:nth-child(3) { transition-delay: 0.2s; }
 .services-grid > .reveal:nth-child(4) { transition-delay: 0.3s; }
+.services-grid > .reveal:nth-child(5) { transition-delay: 0.4s; }
 
 .gallery-grid > .reveal:nth-child(1) { transition-delay: 0s; }
 .gallery-grid > .reveal:nth-child(2) { transition-delay: 0.12s; }
