@@ -82,6 +82,12 @@
     <textarea id="message" name="Message" placeholder="Number of people, vision for the shoot, anything I should know..."></textarea>
   </div>
 
+  <div class="field">
+    <label for="captcha">Quick check: what is <span id="captcha-a"></span> + <span id="captcha-b"></span>?</label>
+    <input type="text" id="captcha" inputmode="numeric" autocomplete="off" required />
+    <span class="field-error">That doesn't look right — please try again.</span>
+  </div>
+
   <button type="submit" class="btn">Request Booking</button>
   <p class="form-note">This sends a booking request — it doesn't guarantee the date until confirmed by email.</p>
   <div id="form-status" class="form-status" role="status" aria-live="polite"></div>

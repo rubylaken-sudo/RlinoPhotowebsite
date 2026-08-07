@@ -60,6 +60,22 @@ function initBookingForm(form) {
   const status = document.getElementById("form-status");
   const submitBtn = form.querySelector('button[type="submit"]');
 
+  const captchaAEl = form.querySelector("#captcha-a");
+  const captchaBEl = form.querySelector("#captcha-b");
+  const captchaInput = form.querySelector("#captcha");
+  let captchaAnswer = null;
+
+  function newCaptcha() {
+    const a = Math.floor(Math.random() * 8) + 2; // 2-9
+    const b = Math.floor(Math.random() * 8) + 2; // 2-9
+    captchaAnswer = a + b;
+    if (captchaAEl) captchaAEl.textContent = a;
+    if (captchaBEl) captchaBEl.textContent = b;
+    if (captchaInput) captchaInput.value = "";
+  }
+
+  if (captchaInput) newCaptcha();
+
   const validators = {
     name: (v) => v.trim().length >= 2 || "Please enter your full name.",
     email: (v) =>
@@ -69,6 +85,9 @@ function initBookingForm(form) {
     "session-type": (v) => v !== "" || "Please choose a session type.",
     "session-date": (v) => v !== "" || "Please choose a preferred date.",
     "session-time": (v) => v !== "" || "Please choose a preferred time.",
+    captcha: (v) =>
+      parseInt(v.trim(), 10) === captchaAnswer ||
+      "That doesn't look right — please try again.",
   };
 
   form.querySelectorAll("input, select, textarea").forEach((field) => {
@@ -85,6 +104,9 @@ function initBookingForm(form) {
     });
 
     if (!valid) {
+      if (captchaInput && parseInt(captchaInput.value.trim(), 10) !== captchaAnswer) {
+        newCaptcha();
+      }
       showStatus("Please fix the highlighted fields above.", "error");
       return;
     }
@@ -111,6 +133,7 @@ function initBookingForm(form) {
           "success"
         );
         form.reset();
+        if (captchaInput) newCaptcha();
       } else {
         throw new Error("Request failed");
       }
