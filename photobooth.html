@@ -199,10 +199,9 @@
         <textarea id="message" name="Message" placeholder="Package you're interested in, guest count, anything I should know..."></textarea>
       </div>
 
-      <div class="field">
-        <label for="captcha">Quick check: what is <span id="captcha-a"></span> + <span id="captcha-b"></span>?</label>
-        <input type="text" id="captcha" inputmode="numeric" autocomplete="off" required />
-        <span class="field-error">That doesn't look right — please try again.</span>
+      <div class="field" data-field="recaptcha">
+        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+        <span class="field-error">Please check the box to verify you're not a robot.</span>
       </div>
 
       <button type="submit" class="btn btn-primary">Request Booking</button>
@@ -243,6 +242,7 @@
   </div>
 </footer>
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="script.js"></script>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>

@@ -10,6 +10,10 @@
   4. First submission: FormSubmit emails rlinophoto@gmail.com a one-time
      confirmation link. Click it once, then all future submissions land
      in that inbox automatically. See README.md for details.
+  5. BEFORE this works: replace YOUR_RECAPTCHA_SITE_KEY below (search for
+     it) with a real site key from google.com/recaptcha/admin (reCAPTCHA
+     v2 "I'm not a robot" Checkbox, with your domain registered). Until
+     you do, the checkbox widget won't render.
 
   Everything below is scoped under #rlino-booking-embed so it won't
   collide with your Squarespace theme's styles.
@@ -230,10 +234,9 @@
       <textarea id="rb-message" name="Message" placeholder="Number of people, vision for the shoot, anything I should know..."></textarea>
     </div>
 
-    <div class="rb-field" data-field="rb-captcha">
-      <label for="rb-captcha">Quick check: what is <span id="rb-captcha-a"></span> + <span id="rb-captcha-b"></span>?</label>
-      <input type="text" id="rb-captcha" inputmode="numeric" autocomplete="off" required />
-      <span class="rb-field-error">That doesn't look right &mdash; please try again.</span>
+    <div class="rb-field" data-field="rb-recaptcha">
+      <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+      <span class="rb-field-error">Please check the box to verify you're not a robot.</span>
     </div>
 
     <button type="submit" class="rb-btn">Request Booking</button>
@@ -242,6 +245,7 @@
   </form>
 </div>
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script>
   (function () {
     var root = document.getElementById("rlino-booking-embed");
@@ -257,21 +261,7 @@
       dateInput.setAttribute("min", new Date().toISOString().split("T")[0]);
     }
 
-    var captchaAEl = root.querySelector("#rb-captcha-a");
-    var captchaBEl = root.querySelector("#rb-captcha-b");
-    var captchaInput = root.querySelector("#rb-captcha");
-    var captchaAnswer = null;
-
-    function newCaptcha() {
-      var a = Math.floor(Math.random() * 8) + 2; // 2-9
-      var b = Math.floor(Math.random() * 8) + 2; // 2-9
-      captchaAnswer = a + b;
-      if (captchaAEl) captchaAEl.textContent = a;
-      if (captchaBEl) captchaBEl.textContent = b;
-      if (captchaInput) captchaInput.value = "";
-    }
-
-    if (captchaInput) newCaptcha();
+    var recaptchaWrapper = root.querySelector('[data-field="rb-recaptcha"]');
 
     var validators = {
       "rb-name": function (v) {
@@ -291,9 +281,6 @@
       },
       "rb-session-time": function (v) {
         return v !== "" || "Please choose a preferred time.";
-      },
-      "rb-captcha": function (v) {
-        return parseInt(v.trim(), 10) === captchaAnswer || "That doesn't look right — please try again.";
       },
     };
 
@@ -334,10 +321,14 @@
         if (field && !validateField(field)) valid = false;
       });
 
-      if (!valid) {
-        if (captchaInput && parseInt(captchaInput.value.trim(), 10) !== captchaAnswer) {
-          newCaptcha();
-        }
+      var recaptchaOk = true;
+      if (recaptchaWrapper) {
+        recaptchaOk =
+          typeof grecaptcha !== "undefined" && grecaptcha.getResponse().length > 0;
+        recaptchaWrapper.classList.toggle("rb-error", !recaptchaOk);
+      }
+
+      if (!valid || !recaptchaOk) {
         showStatus("Please fix the highlighted fields above.", "rb-error-msg");
         return;
       }
@@ -360,7 +351,7 @@
             "rb-success"
           );
           form.reset();
-          if (captchaInput) newCaptcha();
+          if (typeof grecaptcha !== "undefined") grecaptcha.reset();
         })
         .catch(function () {
           showStatus(
