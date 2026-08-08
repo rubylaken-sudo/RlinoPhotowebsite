@@ -10,10 +10,11 @@
   4. First submission: FormSubmit emails rlinophoto@gmail.com a one-time
      confirmation link. Click it once, then all future submissions land
      in that inbox automatically. See README.md for details.
-  5. BEFORE this works: replace YOUR_RECAPTCHA_SITE_KEY below (search for
-     it) with a real site key from google.com/recaptcha/admin (reCAPTCHA
-     v2 "I'm not a robot" Checkbox, with your domain registered). Until
-     you do, the checkbox widget won't render.
+  5. This already has a live reCAPTCHA v2 site key wired in. It only
+     renders on domains registered for that key at
+     google.com/recaptcha/admin — if you paste this into a site on a
+     different domain, add that domain there too or the checkbox won't
+     show up.
 
   Everything below is scoped under #rlino-booking-embed so it won't
   collide with your Squarespace theme's styles.
@@ -235,7 +236,7 @@
     </div>
 
     <div class="rb-field" data-field="rb-recaptcha">
-      <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+      <div class="g-recaptcha" data-sitekey="6Le8zXotAAAAAJ4GMDx2VczdTMz6WtMB9xp1pEdB"></div>
       <span class="rb-field-error">Please check the box to verify you're not a robot.</span>
     </div>
 
