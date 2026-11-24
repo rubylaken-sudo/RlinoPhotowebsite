@@ -9,8 +9,12 @@
 <link rel="icon" href="assets/favicon.png" type="image/png" />
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="photobooth.css" />
 </head>
-<body>
+<body class="pb">
+
+<div class="pb-progress" aria-hidden="true"></div>
+<div class="pb-flash" aria-hidden="true"></div>
 
 <header class="site-header">
   <div class="container">
@@ -28,11 +32,19 @@
 </header>
 
 <section class="hero">
+  <span class="pb-blob b1" aria-hidden="true"></span>
+  <span class="pb-blob b2" aria-hidden="true"></span>
+  <span class="pb-blob b3" aria-hidden="true"></span>
+  <div class="pb-strip s1" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="pb-strip s2" aria-hidden="true"><span></span><span></span><span></span></div>
   <div class="container">
     <span class="eyebrow">Rlino Photo</span>
     <h1>Photobooth for your next event.</h1>
     <p>Instant prints, digital copies, and a whole lot of fun — book the photobooth for your wedding, party, or event.</p>
-    <a href="#booking" class="btn btn-primary">Book the Photobooth</a>
+    <div class="pb-hero-actions">
+      <a href="#booking" class="btn btn-primary" data-flash>Book the Photobooth</a>
+      <a href="#pricing" class="btn pb-btn-ghost">See packages</a>
+    </div>
   </div>
 </section>
 
@@ -45,18 +57,22 @@
     </div>
     <div class="services-grid">
       <div class="service-card reveal">
+        <div class="pb-icon" aria-hidden="true">🖨️</div>
         <h3>Instant Prints</h3>
         <p>Take home a printed keepsake right at the event.</p>
       </div>
       <div class="service-card reveal">
+        <div class="pb-icon" aria-hidden="true">📲</div>
         <h3>Digital Copies</h3>
         <p>Every shot shared digitally so guests can post and save instantly.</p>
       </div>
       <div class="service-card reveal">
+        <div class="pb-icon" aria-hidden="true">🎩</div>
         <h3>Props &amp; Backdrops</h3>
         <p>Fun props and a backdrop to match your event's theme.</p>
       </div>
       <div class="service-card reveal">
+        <div class="pb-icon" aria-hidden="true">💡</div>
         <h3>LED Lighting</h3>
         <p>Studio-quality LED setup for crisp, flattering shots every time.</p>
       </div>
@@ -69,10 +85,10 @@
     <div class="section-heading reveal">
       <span class="eyebrow">Packages</span>
       <h2>Pricing</h2>
-      <p>Three packages to fit your event. All prices exclude VAT. Ask about add-ons and extended hours.</p>
+      <p>Pick a package, slide the hours and see your price. All prices exclude VAT. Ask about add-ons and extended hours.</p>
     </div>
     <div class="pricing-grid">
-      <div class="pricing-card reveal">
+      <div class="pricing-card reveal" data-package="Basic" data-rate="50">
         <h3>Basic</h3>
         <div class="price">&euro;50</div>
         <div class="duration">per hour &middot; excl. VAT</div>
@@ -83,8 +99,10 @@
           <li>Attendant included</li>
           <li>+ &euro;50 travel costs per booking</li>
         </ul>
+        <button type="button" class="btn pb-choose">Choose</button>
       </div>
-      <div class="pricing-card reveal">
+      <div class="pricing-card reveal" data-package="Super" data-rate="75" data-default>
+        <span class="pb-badge">Most popular</span>
         <h3>Super</h3>
         <div class="price">&euro;75</div>
         <div class="duration">per hour &middot; excl. VAT</div>
@@ -96,8 +114,9 @@
           <li>Attendant included</li>
           <li>+ &euro;50 travel costs per booking</li>
         </ul>
+        <button type="button" class="btn pb-choose">Choose</button>
       </div>
-      <div class="pricing-card reveal">
+      <div class="pricing-card reveal" data-package="Ultra" data-rate="100">
         <h3>Ultra</h3>
         <div class="price">&euro;100</div>
         <div class="duration">per hour &middot; excl. VAT</div>
@@ -109,7 +128,27 @@
           <li>Attendant included</li>
           <li>+ &euro;50 travel costs per booking</li>
         </ul>
+        <button type="button" class="btn pb-choose">Choose</button>
       </div>
+    </div>
+    <div class="pb-calc reveal">
+      <h3>Build your quote</h3>
+      <p>Choose a package and how long you need the booth.</p>
+      <div class="pb-tabs" role="group" aria-label="Package">
+        <button type="button" data-package="Basic">Basic</button>
+        <button type="button" data-package="Super">Super</button>
+        <button type="button" data-package="Ultra">Ultra</button>
+      </div>
+      <div class="pb-hours">
+        <label for="pb-hours">Duration</label>
+        <input type="range" id="pb-hours" min="1" max="8" step="1" value="3" />
+        <output id="pb-hours-out" for="pb-hours">3 hours</output>
+      </div>
+      <div class="pb-total" aria-live="polite">
+        <div class="amount" id="pb-amount">&euro;0</div>
+        <div class="breakdown" id="pb-breakdown"></div>
+      </div>
+      <a href="#booking" class="btn btn-primary" id="pb-quote" data-flash>Request this quote</a>
     </div>
   </div>
 </section>
@@ -257,6 +296,7 @@
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="script.js"></script>
+<script src="photobooth.js"></script>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
