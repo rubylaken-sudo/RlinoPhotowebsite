@@ -9,8 +9,12 @@
 <link rel="icon" href="assets/favicon.png" type="image/png" />
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="theme.css" />
 </head>
-<body>
+<body class="pb">
+
+<div class="pb-progress" aria-hidden="true"></div>
+<div class="pb-flash" aria-hidden="true"></div>
 
 <header class="site-header">
   <div class="container">
@@ -112,6 +116,7 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="theme.js"></script>
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
   document.getElementById("updated-date").textContent = new Date().toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });

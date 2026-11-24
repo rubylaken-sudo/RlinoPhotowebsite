@@ -1,5 +1,5 @@
-/* Rlino Photo — photobooth page: modern / interactive theme
-   Scoped to body.pb so other pages are untouched. */
+/* Rlino Photo — shared dark / interactive theme (all pages)
+   Scoped to body.pb. Includes photobooth-specific pieces (quote calculator). */
 
 body.pb {
   --pb-bg: #0b0e12;
@@ -535,4 +535,48 @@ body.pb .social-links a:hover {
 @media (prefers-reduced-motion: reduce) {
   .pb-blob, .pb-strip { animation: none; }
   .pb-flash.go { animation: none; }
+}
+
+/* Hero with a photo behind the glow (home page) */
+body.pb .hero.has-photo {
+  background:
+    linear-gradient(180deg, rgba(11, 14, 18, 0.78), var(--pb-bg) 98%),
+    url("assets/hero.jpg") center / cover no-repeat;
+}
+
+body.pb .hero.has-photo .pb-blob {
+  opacity: 0.35;
+  mix-blend-mode: screen;
+}
+
+/* Legal / terms page */
+body.pb .legal-page h1,
+body.pb .legal-page h2 {
+  color: var(--pb-text);
+}
+
+body.pb .legal-page p,
+body.pb .legal-page ul,
+body.pb .legal-updated {
+  color: var(--pb-muted);
+}
+
+body.pb .legal-page a {
+  color: var(--accent);
+}
+
+body.pb .legal-notice {
+  background: var(--pb-surface);
+  border: 1px solid var(--pb-line);
+  border-radius: 16px;
+  color: var(--pb-muted);
+}
+
+/* Gallery photos */
+body.pb .gallery-grid .frame {
+  background: var(--pb-surface);
+}
+
+body.pb a.service-card {
+  color: var(--pb-text);
 }

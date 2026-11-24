@@ -9,8 +9,12 @@
 <link rel="icon" href="assets/favicon.png" type="image/png" />
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="theme.css" />
 </head>
-<body>
+<body class="pb">
+
+<div class="pb-progress" aria-hidden="true"></div>
+<div class="pb-flash" aria-hidden="true"></div>
 
 <header class="site-header">
   <div class="container">
@@ -28,12 +32,18 @@
   </div>
 </header>
 
-<section class="hero">
+<section class="hero has-photo">
+  <span class="pb-blob b1" aria-hidden="true"></span>
+  <span class="pb-blob b2" aria-hidden="true"></span>
+  <span class="pb-blob b3" aria-hidden="true"></span>
   <div class="container">
     <span class="eyebrow">Rlino Photo</span>
     <h1>Photography that feels like you.</h1>
     <p>Portraits, events, and weddings captured with care. Check your date and request a booking in under a minute.</p>
-    <a href="#booking" class="btn btn-primary">Book a Session</a>
+    <div class="pb-hero-actions">
+      <a href="#booking" class="btn btn-primary" data-flash>Book a Session</a>
+      <a href="#gallery" class="btn pb-btn-ghost">See my work</a>
+    </div>
   </div>
 </section>
 
@@ -46,22 +56,27 @@
     </div>
     <div class="services-grid">
       <div class="service-card reveal">
+        <div class="pb-icon" aria-hidden="true">📷</div>
         <h3>Portraits</h3>
         <p>Individual, couple, and family sessions on location or in studio.</p>
       </div>
       <div class="service-card reveal">
+        <div class="pb-icon" aria-hidden="true">💍</div>
         <h3>Weddings</h3>
         <p>Full-day or elopement coverage, from getting ready to the last dance.</p>
       </div>
       <div class="service-card reveal">
+        <div class="pb-icon" aria-hidden="true">🎉</div>
         <h3>Events</h3>
         <p>Corporate, birthdays, and celebrations, documented candidly.</p>
       </div>
       <div class="service-card reveal">
+        <div class="pb-icon" aria-hidden="true">🛍️</div>
         <h3>Product &amp; Brand</h3>
         <p>Clean, editorial imagery for shops and small businesses.</p>
       </div>
       <a class="service-card reveal" href="photobooth.html">
+        <div class="pb-icon" aria-hidden="true">🎞️</div>
         <h3>Photobooth</h3>
         <p>Instant prints, props, and digital copies for your next event.</p>
       </a>
@@ -215,6 +230,7 @@
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="script.js"></script>
+<script src="theme.js"></script>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
