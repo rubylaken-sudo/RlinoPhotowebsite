@@ -580,3 +580,118 @@ body.pb .gallery-grid .frame {
 body.pb a.service-card {
   color: var(--pb-text);
 }
+
+/* Services dropdown */
+body.pb .has-dropdown {
+  position: relative;
+}
+
+body.pb .dropdown-toggle {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--pb-text);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+body.pb .dropdown-toggle:hover,
+body.pb .has-dropdown.open .dropdown-toggle {
+  color: var(--accent);
+}
+
+body.pb .dropdown-toggle span {
+  display: inline-block;
+  font-size: 0.7em;
+  transition: transform 0.2s ease;
+}
+
+body.pb .has-dropdown.open .dropdown-toggle span {
+  transform: rotate(180deg);
+}
+
+body.pb .dropdown {
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  min-width: 210px;
+  transform: translate(-50%, 8px);
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(16, 20, 26, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--pb-line);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.7);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+/* bridge the gap so hover isn't lost between toggle and menu */
+body.pb .dropdown::before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 0;
+  right: 0;
+  height: 16px;
+}
+
+body.pb .has-dropdown.open .dropdown,
+body.pb .has-dropdown:hover .dropdown,
+body.pb .has-dropdown:focus-within .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+body.pb .dropdown a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+body.pb .dropdown a:hover {
+  background: var(--pb-surface-hi);
+  color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  body.pb .dropdown {
+    position: static;
+    transform: none;
+    min-width: 0;
+    margin-top: 10px;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    background: var(--pb-surface);
+    box-shadow: none;
+  }
+
+  body.pb .has-dropdown.open .dropdown {
+    display: block;
+    transform: none;
+  }
+
+  /* touch: only the tap toggle opens it, not sticky hover */
+  body.pb .has-dropdown:hover .dropdown,
+  body.pb .has-dropdown:focus-within .dropdown {
+    transform: none;
+  }
+
+  body.pb .has-dropdown:not(.open):hover .dropdown,
+  body.pb .has-dropdown:not(.open):focus-within .dropdown {
+    display: none;
+  }
+
+  body.pb .dropdown::before {
+    display: none;
+  }
+}

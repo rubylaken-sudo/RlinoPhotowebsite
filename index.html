@@ -21,12 +21,20 @@
     <a href="#" class="logo"><img src="assets/logo-black.png" alt="Rlino Photo" /></a>
     <nav>
       <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="photobooth.html">Photobooth</a></li>
-        <li><a href="#booking">Book a Session</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-dropdown">
+          <button type="button" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">Services <span aria-hidden="true">&#9662;</span></button>
+          <ul class="dropdown">
+            <li><a href="portraits.html">Portraits</a></li>
+            <li><a href="weddings.html">Weddings</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="product-brand.html">Product &amp; Brand</a></li>
+            <li><a href="photobooth.html">Photobooth</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#booking">Book a Session</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
     <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
@@ -56,26 +64,26 @@
       <p>Every session is tailored to you — from an intimate portrait shoot to a full day of wedding coverage.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card reveal">
+      <a class="service-card reveal" href="portraits.html">
         <div class="pb-icon" aria-hidden="true">📷</div>
         <h3>Portraits</h3>
         <p>Individual, couple, and family sessions on location or in studio.</p>
-      </div>
-      <div class="service-card reveal">
+      </a>
+      <a class="service-card reveal" href="weddings.html">
         <div class="pb-icon" aria-hidden="true">💍</div>
         <h3>Weddings</h3>
         <p>Full-day or elopement coverage, from getting ready to the last dance.</p>
-      </div>
+      </a>
       <a class="service-card reveal" href="events.html">
         <div class="pb-icon" aria-hidden="true">🎉</div>
         <h3>Events</h3>
         <p>Corporate, birthdays, and celebrations, documented candidly.</p>
       </a>
-      <div class="service-card reveal">
+      <a class="service-card reveal" href="product-brand.html">
         <div class="pb-icon" aria-hidden="true">🛍️</div>
         <h3>Product &amp; Brand</h3>
         <p>Clean, editorial imagery for shops and small businesses.</p>
-      </div>
+      </a>
       <a class="service-card reveal" href="photobooth.html">
         <div class="pb-icon" aria-hidden="true">🎞️</div>
         <h3>Photobooth</h3>

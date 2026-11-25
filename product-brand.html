@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Product &amp; Brand — Rlino Photo</title>
+<meta name="description" content="Product and brand photography by Rlino Photo — clean, editorial imagery for shops and small businesses." />
+<link rel="icon" href="assets/favicon.ico" sizes="any" />
+<link rel="icon" href="assets/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="theme.css" />
+</head>
+<body class="pb">
+
+<div class="pb-progress" aria-hidden="true"></div>
+<div class="pb-flash" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo"><img src="assets/logo-black.png" alt="Rlino Photo" /></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="has-dropdown">
+          <button type="button" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">Services <span aria-hidden="true">&#9662;</span></button>
+          <ul class="dropdown">
+            <li><a href="portraits.html">Portraits</a></li>
+            <li><a href="weddings.html">Weddings</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="product-brand.html">Product &amp; Brand</a></li>
+            <li><a href="photobooth.html">Photobooth</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#booking">Book a Session</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="pb-blob b1" aria-hidden="true"></span>
+  <span class="pb-blob b2" aria-hidden="true"></span>
+  <span class="pb-blob b3" aria-hidden="true"></span>
+  <div class="container">
+    <span class="eyebrow">Rlino Photo</span>
+    <h1>Imagery that sells your brand.</h1>
+    <p>Clean, editorial imagery for shops and small businesses.</p>
+    <div class="pb-hero-actions">
+      <a href="index.html#booking" class="btn btn-primary" data-flash>Book a session</a>
+      <a href="#gallery" class="btn pb-btn-ghost">See the photos</a>
+    </div>
+  </div>
+</section>
+
+<section id="details">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">What To Expect</span>
+      <h2>Product &amp; Brand</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="pb-icon" aria-hidden="true">🛍️</div>
+        <h3>Product Shots</h3>
+        <p>Clean, consistent photos for your shop or catalog.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="pb-icon" aria-hidden="true">🎨</div>
+        <h3>Brand Imagery</h3>
+        <p>Editorial visuals that match your brand's look and feel.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="pb-icon" aria-hidden="true">📦</div>
+        <h3>Flat Lays & Lifestyle</h3>
+        <p>Styled scenes that show your products in context.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Recent Work</span>
+      <h2>Gallery</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="frame reveal"><img src="assets/gallery2.jpg" alt="Flat-lay product photography of sneakers, watch, and accessories" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+
+<section id="cta">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Let's Talk</span>
+      <h2>Ready to book?</h2>
+      <p>Send a booking request and I'll get back to you within 1-2 business days.</p>
+      <p><a href="index.html#booking" class="btn btn-primary" data-flash>Request a booking</a></p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="contact">
+  <div class="container">
+    <img src="assets/logo-black.png" alt="Rlino Photo" class="footer-logo" />
+    <p>Rlino Photo &middot; <a href="mailto:rlinophoto@gmail.com">rlinophoto@gmail.com</a></p>
+    <p><a href="terms.html">Terms and Conditions</a></p>
+    <p>&copy; <span id="year"></span> Rlino Photo. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="theme.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -167,3 +167,28 @@ function initPricing(reduce) {
 
   render();
 }
+
+// Services dropdown: tap/click toggle, close on outside click or Escape
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".has-dropdown").forEach((item) => {
+    const btn = item.querySelector(".dropdown-toggle");
+    if (!btn) return;
+    const set = (open) => {
+      item.classList.toggle("open", open);
+      btn.setAttribute("aria-expanded", String(open));
+    };
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      set(!item.classList.contains("open"));
+    });
+    document.addEventListener("click", (e) => {
+      if (!item.contains(e.target)) set(false);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        set(false);
+        btn.blur();
+      }
+    });
+  });
+});
