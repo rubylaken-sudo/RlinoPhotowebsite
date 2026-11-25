@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Events — Rlino Photo</title>
+<meta name="description" content="Event photography by Rlino Photo — birthdays, quinceañeras, concerts, corporate and celebrations documented candidly." />
+<link rel="icon" href="assets/favicon.ico" sizes="any" />
+<link rel="icon" href="assets/favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="theme.css" />
+</head>
+<body class="pb">
+
+<div class="pb-progress" aria-hidden="true"></div>
+<div class="pb-flash" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo"><img src="assets/logo-black.png" alt="Rlino Photo" /></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#types">Events</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="photobooth.html">Photobooth</a></li>
+        <li><a href="index.html#booking">Book Now</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="pb-blob b1" aria-hidden="true"></span>
+  <span class="pb-blob b2" aria-hidden="true"></span>
+  <span class="pb-blob b3" aria-hidden="true"></span>
+  <div class="container">
+    <span class="eyebrow">Rlino Photo</span>
+    <h1>Event photography.</h1>
+    <p>Birthdays, quinceañeras, concerts and celebrations — every big moment documented candidly, so you can enjoy the day.</p>
+    <div class="pb-hero-actions">
+      <a href="index.html#booking" class="btn btn-primary" data-flash>Book your event</a>
+      <a href="#gallery" class="btn pb-btn-ghost">See the photos</a>
+    </div>
+  </div>
+</section>
+
+<section id="types">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">What I Cover</span>
+      <h2>Events</h2>
+      <p>From intimate parties to large crowds, coverage is tailored to your event.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="pb-icon" aria-hidden="true">🎂</div>
+        <h3>Birthdays</h3>
+        <p>Candid moments from the cake to the last dance.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="pb-icon" aria-hidden="true">👑</div>
+        <h3>Quinceañeras</h3>
+        <p>The gowns, the details and the whole celebration.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="pb-icon" aria-hidden="true">🎤</div>
+        <h3>Concerts &amp; Shows</h3>
+        <p>Performers and crowd energy under the stage lights.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="pb-icon" aria-hidden="true">🥂</div>
+        <h3>Corporate &amp; Celebrations</h3>
+        <p>Launches, parties and gatherings documented with care.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Recent Events</span>
+      <h2>Gallery</h2>
+      <p>A few favorites from recent events.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="frame reveal"><img src="assets/gallery1.jpg" alt="Two quinceañera guests of honor in matching blue gowns and tiaras" loading="lazy" /></div>
+      <div class="frame reveal"><img src="assets/gallery3.jpg" alt="Concert stage view of a performer and crowd under spotlights" loading="lazy" /></div>
+      <div class="frame reveal"><img src="assets/gallery4.jpg" alt="Carnival performer in a pink and gold feathered costume" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+
+<section id="cta">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Let's Talk</span>
+      <h2>Planning an event?</h2>
+      <p>Send a booking request and I'll get back to you within 1-2 business days.</p>
+      <p><a href="index.html#booking" class="btn btn-primary" data-flash>Request a booking</a></p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="contact">
+  <div class="container">
+    <img src="assets/logo-black.png" alt="Rlino Photo" class="footer-logo" />
+    <p>Rlino Photo &middot; <a href="mailto:rlinophoto@gmail.com">rlinophoto@gmail.com</a></p>
+    <p><a href="terms.html">Terms and Conditions</a></p>
+    <p>&copy; <span id="year"></span> Rlino Photo. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="theme.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
