@@ -544,6 +544,12 @@ body.pb .hero.has-photo {
     url("assets/hero.jpg") center / cover no-repeat;
 }
 
+body.pb .hero.has-photo.hero-events {
+  background:
+    linear-gradient(180deg, rgba(11, 14, 18, 0.45), var(--pb-bg) 98%),
+    url("assets/event-1.jpg") center / cover no-repeat;
+}
+
 body.pb .hero.has-photo .pb-blob {
   opacity: 0.35;
   mix-blend-mode: screen;
