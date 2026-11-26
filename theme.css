@@ -550,6 +550,12 @@ body.pb .hero.has-photo.hero-events {
     url("assets/event-1.jpg") center / cover no-repeat;
 }
 
+body.pb .hero.has-photo.hero-weddings {
+  background:
+    linear-gradient(180deg, rgba(11, 14, 18, 0.5), var(--pb-bg) 98%),
+    url("assets/wedding-1.jpg") center 40% / cover no-repeat;
+}
+
 body.pb .hero.has-photo .pb-blob {
   opacity: 0.35;
   mix-blend-mode: screen;
