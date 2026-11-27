@@ -559,7 +559,7 @@ body.pb .hero.has-photo.hero-weddings {
 body.pb .hero.has-photo.hero-portraits {
   background:
     linear-gradient(180deg, rgba(11, 14, 18, 0.55), var(--pb-bg) 98%),
-    url("assets/portrait-1.jpg") center 35% / cover no-repeat;
+    url("assets/portrait-2.jpg") center 30% / cover no-repeat;
 }
 
 body.pb .hero.has-photo .pb-blob {
